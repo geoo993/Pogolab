@@ -1,0 +1,187 @@
+fileFormatVersion: 2
+guid: 6222508f3d0bd49598be147e1fd228d3
+timeCreated: 1472916542
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: toothbrush:pCone10
+    100004: toothbrush:pCone11
+    100006: toothbrush:pCone12
+    100008: toothbrush:pCone13
+    100010: toothbrush:pCone14
+    100012: toothbrush:pCone15
+    100014: toothbrush:pCone16
+    100016: toothbrush:pCone2
+    100018: toothbrush:pCone5
+    100020: toothbrush:pCone6
+    100022: toothbrush:pCone7
+    100024: toothbrush:pCone8
+    100026: toothbrush:pCone9
+    100028: toothbrush:pCube54
+    100030: toothbrush:pCube78
+    100032: toothbrush:polySurface10
+    100034: toothbrush:polySurface11
+    100036: toothbrush:polySurface12
+    100038: toothbrush:polySurface13
+    100040: toothbrush:polySurface2
+    100042: toothbrush:polySurface2 1
+    100044: toothbrush:polySurface3
+    100046: toothbrush:polySurface4
+    100048: toothbrush:polySurface5
+    100050: toothbrush:polySurface6
+    100052: toothbrush:polySurface7
+    100054: toothbrush:polySurface8
+    100056: toothbrush:polySurface9
+    100058: toothbrush:transform100
+    100060: toothbrush:transform101
+    100062: toothbrush:transform102
+    100064: toothbrush:transform103
+    100066: toothbrush:transform104
+    100068: toothbrush:transform105
+    100070: toothbrush:transform106
+    100072: toothbrush:transform107
+    100074: toothbrush:transform56
+    100076: toothbrush:transform57
+    100078: toothbrush:transform58
+    100080: toothbrush:transform59
+    100082: toothbrush:transform60
+    100084: toothbrush:transform61
+    100086: toothbrush:transform62
+    100088: toothbrush:transform63
+    100090: toothbrush:transform64
+    100092: toothbrush:transform65
+    100094: toothbrush:transform66
+    100096: toothbrush:transform67
+    100098: toothbrush:transform93
+    100100: toothbrush:transform94
+    100102: toothbrush:transform95
+    100104: toothbrush:transform96
+    100106: toothbrush:transform97
+    100108: toothbrush:transform98
+    100110: toothbrush:transform99
+    400000: //RootNode
+    400002: toothbrush:pCone10
+    400004: toothbrush:pCone11
+    400006: toothbrush:pCone12
+    400008: toothbrush:pCone13
+    400010: toothbrush:pCone14
+    400012: toothbrush:pCone15
+    400014: toothbrush:pCone16
+    400016: toothbrush:pCone2
+    400018: toothbrush:pCone5
+    400020: toothbrush:pCone6
+    400022: toothbrush:pCone7
+    400024: toothbrush:pCone8
+    400026: toothbrush:pCone9
+    400028: toothbrush:pCube54
+    400030: toothbrush:pCube78
+    400032: toothbrush:polySurface10
+    400034: toothbrush:polySurface11
+    400036: toothbrush:polySurface12
+    400038: toothbrush:polySurface13
+    400040: toothbrush:polySurface2
+    400042: toothbrush:polySurface2 1
+    400044: toothbrush:polySurface3
+    400046: toothbrush:polySurface4
+    400048: toothbrush:polySurface5
+    400050: toothbrush:polySurface6
+    400052: toothbrush:polySurface7
+    400054: toothbrush:polySurface8
+    400056: toothbrush:polySurface9
+    400058: toothbrush:transform100
+    400060: toothbrush:transform101
+    400062: toothbrush:transform102
+    400064: toothbrush:transform103
+    400066: toothbrush:transform104
+    400068: toothbrush:transform105
+    400070: toothbrush:transform106
+    400072: toothbrush:transform107
+    400074: toothbrush:transform56
+    400076: toothbrush:transform57
+    400078: toothbrush:transform58
+    400080: toothbrush:transform59
+    400082: toothbrush:transform60
+    400084: toothbrush:transform61
+    400086: toothbrush:transform62
+    400088: toothbrush:transform63
+    400090: toothbrush:transform64
+    400092: toothbrush:transform65
+    400094: toothbrush:transform66
+    400096: toothbrush:transform67
+    400098: toothbrush:transform93
+    400100: toothbrush:transform94
+    400102: toothbrush:transform95
+    400104: toothbrush:transform96
+    400106: toothbrush:transform97
+    400108: toothbrush:transform98
+    400110: toothbrush:transform99
+    2300000: toothbrush:polySurface2
+    3300000: toothbrush:polySurface2
+    4300000: toothbrush:polySurface2
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

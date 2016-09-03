@@ -1,0 +1,167 @@
+fileFormatVersion: 2
+guid: eb83b8e45019e4732b685fbd092917db
+timeCreated: 1472912726
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: pCube15
+    100004: pCube17
+    100006: pCube2
+    100008: pCube26
+    100010: pCube3
+    100012: pCube4
+    100014: pCube5
+    100016: pCylinder1
+    100018: pCylinder2
+    100020: pCylinder9
+    100022: polySurface11
+    100024: polySurface12
+    100026: polySurface12 1
+    100028: polySurface2
+    100030: polySurface2 1
+    100032: polySurface3
+    100034: polySurface4
+    100036: polySurface5
+    100038: polySurface6
+    100040: polySurface7
+    100042: polySurface8
+    100044: polySurface9
+    100046: pSphere1
+    100048: transform10
+    100050: transform11
+    100052: transform12
+    100054: transform13
+    100056: transform14
+    100058: transform15
+    100060: transform16
+    100062: transform17
+    100064: transform18
+    100066: transform37
+    100068: transform38
+    100070: transform39
+    100072: transform40
+    100074: transform41
+    100076: transform42
+    100078: transform43
+    100080: transform44
+    100082: transform45
+    100084: transform46
+    100086: transform47
+    100088: transform48
+    100090: transform49
+    400000: //RootNode
+    400002: pCube15
+    400004: pCube17
+    400006: pCube2
+    400008: pCube26
+    400010: pCube3
+    400012: pCube4
+    400014: pCube5
+    400016: pCylinder1
+    400018: pCylinder2
+    400020: pCylinder9
+    400022: polySurface11
+    400024: polySurface12
+    400026: polySurface12 1
+    400028: polySurface2
+    400030: polySurface2 1
+    400032: polySurface3
+    400034: polySurface4
+    400036: polySurface5
+    400038: polySurface6
+    400040: polySurface7
+    400042: polySurface8
+    400044: polySurface9
+    400046: pSphere1
+    400048: transform10
+    400050: transform11
+    400052: transform12
+    400054: transform13
+    400056: transform14
+    400058: transform15
+    400060: transform16
+    400062: transform17
+    400064: transform18
+    400066: transform37
+    400068: transform38
+    400070: transform39
+    400072: transform40
+    400074: transform41
+    400076: transform42
+    400078: transform43
+    400080: transform44
+    400082: transform45
+    400084: transform46
+    400086: transform47
+    400088: transform48
+    400090: transform49
+    2300000: polySurface12
+    3300000: polySurface12
+    4300000: polySurface12
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
