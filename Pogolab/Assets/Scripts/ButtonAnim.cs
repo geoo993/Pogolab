@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Anim : MonoBehaviour {
+public class ButtonAnim : MonoBehaviour {
 
 	Animator anim;
 
