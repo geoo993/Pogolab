@@ -43,9 +43,19 @@ public class GameManager : MonoBehaviour {
 		renderer = mirror.GetComponent<MeshRenderer> ();
 
 
-		StopAnimation ();
+		//StopAnimation ();
 
 	}
+
+	void Update () {
+
+
+		Animating ();
+
+
+
+	}
+
 
 
 
@@ -113,28 +123,36 @@ public class GameManager : MonoBehaviour {
 
 	void Animating(){
 
-		for (int i = 0; i < animator.Length; i++) {
-			//Debug.Log(anim [i].layerCount);
-			//anim [i].Play (anim [i].name, 0, 0.5f);
+		float move = Input.GetAxis("Vertical");
+
+		foreach (Animator anim in animator) {
+
+			anim.SetFloat ("Speed", move);
 
 		}
 
-		if (Input.GetKeyDown (KeyCode.Space)) {
-			Debug.Log ("yess");
-
-			for (int i = 0; i < animator.Length; i++) {
-
-				//float desired_play_time = 10f;
-
-
-				animator[i].speed = 5f;
-				//anim [i].Play (0);
-
-				//animator[i].Stop();
-				//animator[i].Play (anim[i].name, 0, (1f / 30f) * 30f);
-				//Debug.Log("Animation namd: "+animator[i].name + "Animation length: "+animator[i].runtimeAnimatorController);
-			}
-		}
+//		for (int i = 0; i < animator.Length; i++) {
+//			//Debug.Log(anim [i].layerCount);
+//			//anim [i].Play (anim [i].name, 0, 0.5f);
+//
+//		}
+//
+//		if (Input.GetKeyDown (KeyCode.Space)) {
+//			//Debug.Log ("yess");
+//
+//			for (int i = 0; i < animator.Length; i++) {
+//
+//				//float desired_play_time = 10f;
+//
+//
+//				animator[i].speed = 5f;
+//				//anim [i].Play (0);
+//
+//				//animator[i].Stop();
+//				//animator[i].Play (anim[i].name, 0, (1f / 30f) * 30f);
+//				//Debug.Log("Animation namd: "+animator[i].name + "Animation length: "+animator[i].runtimeAnimatorController);
+//			}
+//		}
 
 		if (Input.GetMouseButton (0)) {
 			HandleInput ();
@@ -157,16 +175,6 @@ public class GameManager : MonoBehaviour {
 
 
 	}
-		
-	void Update () {
-
-
-		Animating ();
-
-
-
-	}
-
 
 
 	//	public void OnPickPhoto(string filePath){
