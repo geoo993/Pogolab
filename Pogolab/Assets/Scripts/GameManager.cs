@@ -1,24 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System.Collections;
+using System.Collections.Generic;
 
 public class GameManager : MonoBehaviour {
 
 
-//	public Slider[] sliderBars;
-//	public Text[] mainTexts = null;
-//	public Image[] scoreIcons = null;
-//	public GameObject[] radarImages = null;
-//	public Color interfaceColor = Color.cyan;
+	public GameObject mirror = null;
+	private Texture texture = null;
+	Texture2D galleryImage = null;
+	bool isGalleryimageLoaded = false;
+	private WebCamDevice[] devices;
+	private const int CAMERADEVICENUMBER = 0;
+	private string deviceName;
+	private WebCamTexture camBackTex;
+	private List<Texture2D> snaps=new List<Texture2D>();
+
+
+
+	//WWW www; //www object to download
+
 
 	public Animator[] animator;
 	public Animation[] animation;
+	MeshRenderer renderer = null;
 
-//	private bool startGame = false;
-//	public static bool resetGame = false;
-//	public static string gameOver = "idle";
-//
-	private int flashCount = 0;
+	public static string getImageButton = "idle";
 
 
 	public Camera mainCamera;
@@ -26,19 +33,85 @@ public class GameManager : MonoBehaviour {
 	private RaycastHit hit;
 	private GameObject hitObject = null;
 
+
 	void Start () {
 
-		//Instantiate( Resources.Load ("CircularGround") );
 
-		//StartCoroutine (StartGame ());
 
+
+		SetupCameraOnDevice ();
+		renderer = mirror.GetComponent<MeshRenderer> ();
 
 
 		StopAnimation ();
 
 	}
-	void Update () {
 
+
+
+	void SetupCameraOnDevice(){
+
+		devices = WebCamTexture.devices;
+		deviceName = devices[CAMERADEVICENUMBER].name;
+		//print (deviceName);
+
+		//camBackTex = new WebCamTexture();
+		//camBackTex = new WebCamTexture("FaceTime HD Camera", 512, 512);
+		camBackTex = new WebCamTexture(deviceName, 640, 480, 30);
+		//camBackTex  =  new WebCamTexture(deviceName, Screen.width, Screen.height,30);
+
+	}
+	void CameraSnapShot(){
+		if (getImageButton == "idle") {
+
+			GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.green;
+
+
+			camBackTex.Play ();
+			renderer.material.mainTexture = camBackTex;
+
+
+		} else if (getImageButton == "takeSnap") {
+
+			GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.red;
+			GameObject.Find ("desk").GetComponent<MeshRenderer> ().material.color = ExtensionMethods.RandomColor ();
+
+
+			Texture2D snap = new Texture2D (camBackTex.width, camBackTex.height);
+			snap.SetPixels (camBackTex.GetPixels ());
+			snap.Apply ();
+
+			renderer.material.mainTexture = snap;
+			snaps.Add (snap);
+			camBackTex.Stop ();
+
+			getImageButton = "photos";
+
+
+		} else if (getImageButton == "photos") {
+
+			camBackTex = null;
+
+			GameObject.Find ("desk").GetComponent<MeshRenderer> ().material.mainTexture = snaps [0];
+			renderer.material.mainTexture = snaps[0];
+
+		}
+
+	}
+		
+
+
+
+
+	void StopAnimation(){
+		for (int i = 0; i < animator.Length; i++) {
+			animator [i].speed = 0;
+			//anim [i].Stop ();
+		}
+	}
+
+
+	void Animating(){
 
 		for (int i = 0; i < animator.Length; i++) {
 			//Debug.Log(anim [i].layerCount);
@@ -66,23 +139,9 @@ public class GameManager : MonoBehaviour {
 		if (Input.GetMouseButton (0)) {
 			HandleInput ();
 		}
+
+
 	}
-
-	void StopAnimation(){
-		for (int i = 0; i < animator.Length; i++) {
-			animator [i].speed = 0;
-			//anim [i].Stop ();
-		}
-	}
-//	_animator.Play ("BalloonUp", 0, (1f / total_frames) * from_frame);
-
-
-//	Invoke ("STOPAnimation", (anim_length / total_frames) * to_frame);
-//	void STOPAnimation ()
-//	{
-//		_animator.speed = 0f;
-//	}
-
 	void HandleInput () 
 	{
 		Ray inputRay = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -97,82 +156,58 @@ public class GameManager : MonoBehaviour {
 
 
 
+	}
+		
+	void Update () {
+
+
+		Animating ();
+
+
 
 	}
 
-//
-//	private IEnumerator StartGame () 
-//	{
-//		WaitForSeconds wait = new WaitForSeconds (0.01f);
-//
-//
-//		//Instantiate( Resources.Load ("ArrowLocator") );
-//	
-//		//Camera.main.gameObject.GetComponent<CameraTracker> ().enabled = true;
-//
-//		yield return wait;
-//
-//		//startGame = false;
-//	}
-//
-//	void Game(){
-//
-//
-//
-//	}
-//
-//
-//	public void GameOver(){
-//
-//	
-////		if (Input.GetKeyDown ("space") ) 
-////		{
-////			Restart ();
-////		}
-//
-//	}
-//	void Restart(){
-//
-//		resetGame = true;
-//
-//		if (resetGame){
-//
-//			resetGame = false;
-//		}
-//
-//	}
-//		
-//
-//
-//	private void FlashHealth(){
-//
-//
-//		if (flashCount < 100) {
-//
-//			healthFlashImage.color = new Color (interfaceColor.r, interfaceColor.g, interfaceColor.b, flashing (0.5f));
-//
-//			flashCount += 1;
-//		} else {
-//			healthFlashImage.color = Color.clear;
-//		}
-//
-//	}
-//
-//
-//	public float percentageValue( float value, float min, float max) 
-//	{
-//		float difference = max - min;
-//		float myPercent = ((value - min) / difference);
-//		return Mathf.Round(100.0f * myPercent);
-//	}
-//
-//	public float flashing( float duration)
-//	{
-//		float phi = Time.time / duration * 2 * Mathf.PI;
-//		float amplitude = Mathf.Cos(phi) * 0.5F + 0.5F;
-//			
-//		return amplitude;
-//	}
-//
 
+
+	//	public void OnPickPhoto(string filePath){
+	//
+	//		Debug.Log (filePath);
+	//
+	//		www = new WWW ("file://" + filePath);  // start downloading that image
+	//
+	//	}
+	//
+	void attemptAtAccessingPhotGallery(){
+
+		//if (getImageButton) {
+
+			//isGalleryimageLoaded = false;
+			//AndroidJavaClass ajc = new AndroidJavaClass("com.unity3d.player.unityPlayer");
+			//AndroidJavaObject ajo = new AndroidJavaObject ("com.photogallerytest.gallery.UnityBinder");
+
+			// open gallery
+			//ajo.CallStatic("OpenGallery",ajc.GetStatic<AndroidJavaObject>("currentActivity"));
+
+
+
+		//}
+
+
+		//		if (www != null && www.isDone) {
+		//			galleryImage = new Texture2D (www.texture.width, www.texture.height);
+		//			galleryImage.SetPixels32 (www.texture.GetPixels32 ()); //copy pixel;
+		//			galleryImage.Apply();
+		//			www = null;
+		//
+		//			isGalleryimageLoaded = true;
+		//			getImageButton = false;
+		//		}
+		//
+		//		if (isGalleryimageLoaded) {
+		//
+		//			renderer.material.mainTexture = galleryImage;
+		//		}
+
+
+	}
 }

@@ -11,6 +11,7 @@ public class ButtonAnim : MonoBehaviour {
 
 	void Update () {
 
+
 		if ( Input.GetMouseButtonDown(0))
 		{
 			RaycastHit hit;
@@ -19,6 +20,12 @@ public class ButtonAnim : MonoBehaviour {
 				
 				if(hit.transform.gameObject.name == "button")
 				{
+					
+					if(GameManager.getImageButton == "idle"){
+
+						GameManager.getImageButton = "takeSnap";
+					}
+
 					anim.Play(0);
 				}
 				
