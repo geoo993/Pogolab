@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	Texture2D galleryImage = null;
 	bool isGalleryimageLoaded = false;
 	private WebCamDevice[] devices;
-	private const int CAMERADEVICENUMBER = 0;
+	private const int CAMERADEVICENUMBER = 1;
 	private string deviceName;
 	private WebCamTexture camBackTex;
 	private List<Texture2D> snaps=new List<Texture2D>();
@@ -114,18 +114,18 @@ public class GameManager : MonoBehaviour {
 
 
 
-//			float speed = 2.5f;
-//			float smooth = 1.0f - Mathf.Pow(0.5f, Time.deltaTime * speed);
-//
-//			Vector3 targetPos = new Vector3 (-25f,0,5f);
-//			//Camera.main.gameObject.transform.position = Vector3.Lerp(Camera.main.gameObject.transform.position, targetPos, Time.time);
-//			Camera.main.gameObject.transform.position = Vector3.Lerp(Camera.main.gameObject.transform.position, targetPos, smooth);
+			float speed = 2.5f;
+			float smooth = 1.0f - Mathf.Pow(0.5f, Time.deltaTime * speed);
+
+			Vector3 targetPos = new Vector3 (-25f,0,5f);
+			//Camera.main.gameObject.transform.position = Vector3.Lerp(Camera.main.gameObject.transform.position, targetPos, Time.time);
+			Camera.main.gameObject.transform.position = Vector3.Lerp(Camera.main.gameObject.transform.position, targetPos, smooth);
 
 			//OtherSprite = new Rect(0, 0, snaps[0].width, snaps[0].height);
-			OtherSprite = Sprite.Create(snaps[0], new Rect(0, 0, 900, 360), new Vector2(-1f, -1f));
-			scannerMirror.GetComponent<Image> ().sprite = OtherSprite;
+			//OtherSprite = Sprite.Create(snaps[0], new Rect(0, 0, 900, 360), new Vector2(-1f, -1f));
+			//scannerMirror.GetComponent<Image> ().sprite = OtherSprite;
 
-			scannerMirror.SetActive(true);
+			//scannerMirror.SetActive(true);
 		}
 
 	}
