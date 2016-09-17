@@ -8,6 +8,8 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 
 	private Vector3 screenPoint;
 	private Vector3 offset;
+	public static float minY = 350.0f; 
+	public static float maxY = 450.0f; 
 
 	void Start () {
 		//anim = GetComponent<Animator>();
@@ -49,7 +51,7 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 
 	void OnMouseDrag()
 	{
-		float yPos =  Mathf.Clamp(Input.mousePosition.y, 85.0f, 180.0f);
+		float yPos =  Mathf.Clamp(Input.mousePosition.y, minY, maxY);
 
 		Vector3 curScreenPoint = new Vector3(screenPoint.x, yPos, screenPoint.z);
 
