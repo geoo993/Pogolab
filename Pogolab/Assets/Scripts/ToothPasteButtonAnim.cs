@@ -3,9 +3,9 @@ using System.Collections;
 
 public class ToothPasteButtonAnim : MonoBehaviour {
 
-	Animator anim;
+//	Animator anim;
+//	private GameObject hitObject = null;
 
-	private GameObject hitObject = null;
 	private Vector3 screenPoint;
 	private Vector3 offset;
 
@@ -44,7 +44,7 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 	
 		offset = this.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, Input.mousePosition.y, screenPoint.z));
 
-		print ("MouseY on DOWN " + Input.mousePosition.y);
+		//print ("MouseY on DOWN " + Input.mousePosition.y);
 	}
 
 	void OnMouseDrag()
@@ -53,7 +53,7 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 
 		Vector3 curScreenPoint = new Vector3(screenPoint.x, yPos, screenPoint.z);
 
-		print ("MouseY on DRAG " + Input.mousePosition.y);
+		//print ("MouseY on DRAG " + Input.mousePosition.y);
 
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;
