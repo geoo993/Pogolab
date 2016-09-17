@@ -17,7 +17,8 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 
 	void Update () {
 
-
+		GetComponent<MeshRenderer> ().enabled = false;
+		this.transform.parent.GetComponent<MeshRenderer> ().enabled = false;
 //
 //		if ( Input.GetMouseButtonDown(0))
 //		{
