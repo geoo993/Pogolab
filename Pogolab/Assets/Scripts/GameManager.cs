@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour {
 
 	public Animator[] animator;
 
+	public Image logo = null;
+
+	public Image[] scanningImages = null;
 	public static string getImageButton = "setupCam";
 
 	public Texture2D scannerBlankImage = null;
@@ -38,8 +41,10 @@ public class GameManager : MonoBehaviour {
 	public Button restartButton;
 	public Button continueButton;
 
+	public Text headingtext = null;
 
 	public Color interfaceColor = new Color();
+	public Color backgroundColor = new Color();
 
 	void Awake () {
 
@@ -93,17 +98,28 @@ public class GameManager : MonoBehaviour {
 	void Update(){
 
 
-		Camera.main.gameObject.GetComponent<Skybox> ().topColor = interfaceColor;
-		Camera.main.gameObject.GetComponent<Skybox> ().midColor = interfaceColor;
-		Camera.main.gameObject.GetComponent<Skybox> ().bottomColor = (interfaceColor/1.5f);
+		Camera.main.gameObject.GetComponent<Skybox> ().topColor = backgroundColor;
+		Camera.main.gameObject.GetComponent<Skybox> ().midColor = backgroundColor;
+		Camera.main.gameObject.GetComponent<Skybox> ().bottomColor = (backgroundColor/1.5f);
 
 		if (getImageButton == "setupCam") {
 			
 			SetupCameraOnDevice ();
 			getImageButton = "started";
+			logo.gameObject.SetActive (true);
+
+			//interfaceColor = ExtensionMethods.RandomColor ();
+			headingtext.color = interfaceColor;
+			continueButton.image.color = interfaceColor;
+			restartButton.image.color = interfaceColor;
+			takePhotoButton.image.color = interfaceColor;
+			foreach (Image img in scanningImages) {
+				img.color = interfaceColor;
+			}
 
 		}else if (getImageButton == "started") {
-			
+
+			headingtext.GetComponent<Text>().text = "";
 			snaps.Clear ();
 			scanningCount = 0;
 			numberOfTouthPasteLiquid = 0;
@@ -139,7 +155,10 @@ public class GameManager : MonoBehaviour {
 
 		} else if (getImageButton == "scan") {
 
+			headingtext.GetComponent<Text>().text = "Scanning";
+			scannerMirrorImage.overrideSprite = Sprite.Create (snaps [0], new Rect (0, 0, 840, 720), new Vector2 (0.5f, 0.5f));
 			takePhotoButton.gameObject.SetActive (false);
+			logo.gameObject.SetActive (false);
 
 			mirrorTarget.SetActive (false);
 			scannerMirror.SetActive (true);
@@ -151,13 +170,15 @@ public class GameManager : MonoBehaviour {
 			
 		} else if (getImageButton == "showPhoto") {
 
-			scannerMirrorImage.overrideSprite = Sprite.Create (snaps [0], new Rect (0, 0, 840, 720), new Vector2 (0.5f, 0.5f));
+			headingtext.GetComponent<Text>().text = "Confirm Photo";
 			scannerMirror.SetActive (false);
 
 			restartButton.gameObject.SetActive (true);
 			continueButton.gameObject.SetActive (true);
 
 		}else if (getImageButton == "lab") {
+
+			headingtext.GetComponent<Text>().text = "Add Tooth Paste";
 
 			restartButton.gameObject.SetActive (false);
 			continueButton.gameObject.SetActive (false);
