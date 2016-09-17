@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour {
 	Texture2D galleryImage = null;
 	bool isGalleryimageLoaded = false;
 	private WebCamDevice[] devices;
-	private const int CAMERADEVICENUMBER = 1;
+	private const int CAMERADEVICENUMBER = 0;
 	private string deviceName;
 	private WebCamTexture camBackTex;
 	private List<Texture2D> snaps=new List<Texture2D>();
@@ -35,6 +35,35 @@ public class GameManager : MonoBehaviour {
 
 	public GameObject scannerMirror= null;
 	private Sprite OtherSprite;
+
+	public Button takePhotoButton;
+	public Button restartButton;
+
+
+	void Awake () {
+
+		takePhotoButton.GetComponent<Button>().onClick.AddListener( () => {OnClickTakePhotoEvent();} ); 
+		restartButton.GetComponent<Button>().onClick.AddListener( () => {OnClickRestartEvent();} ); 
+	}
+
+	void OnClickTakePhotoEvent()
+	{
+
+		Debug.Log ("pressed takephoto button");
+
+		if(getImageButton == "idle"){
+
+			getImageButton = "takeSnap";
+		}
+
+	}
+	void OnClickRestartEvent()
+	{
+
+		Debug.Log ("pressed restart button");
+
+	}
+
 
 	void Start () {
 
@@ -82,7 +111,7 @@ public class GameManager : MonoBehaviour {
 
 			scannerMirror.SetActive(false);
 
-			GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.green;
+			//GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.green;
 
 			camBackTex.Play ();
 			renderer.material.mainTexture = camBackTex;
@@ -90,8 +119,8 @@ public class GameManager : MonoBehaviour {
 
 		} else if (getImageButton == "takeSnap") {
 
-			GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.red;
-			GameObject.Find ("desk").GetComponent<MeshRenderer> ().material.color = ExtensionMethods.RandomColor ();
+			//GameObject.Find ("button").GetComponent<MeshRenderer> ().material.color = Color.red;
+			//GameObject.Find ("desk").GetComponent<MeshRenderer> ().material.color = ExtensionMethods.RandomColor ();
 
 
 			Texture2D snap = new Texture2D (camBackTex.width, camBackTex.height);
@@ -229,7 +258,7 @@ public class GameManager : MonoBehaviour {
 	//
 	//	}
 	//
-	void attemptAtAccessingPhotGallery(){
+	void attemptAtAccessingPhotoGallery(){
 
 		//if (getImageButton) {
 

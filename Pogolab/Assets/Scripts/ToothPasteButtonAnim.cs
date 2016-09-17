@@ -41,14 +41,19 @@ public class ToothPasteButtonAnim : MonoBehaviour {
 	void OnMouseDown()
 	{
 		screenPoint = Camera.main.WorldToScreenPoint(this.transform.position);
-
+	
 		offset = this.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(screenPoint.x, Input.mousePosition.y, screenPoint.z));
 
+		print ("MouseY on DOWN " + Input.mousePosition.y);
 	}
 
 	void OnMouseDrag()
 	{
-		Vector3 curScreenPoint = new Vector3(screenPoint.x, Input.mousePosition.y, screenPoint.z);
+		float yPos =  Mathf.Clamp(Input.mousePosition.y, 85.0f, 180.0f);
+
+		Vector3 curScreenPoint = new Vector3(screenPoint.x, yPos, screenPoint.z);
+
+		print ("MouseY on DRAG " + Input.mousePosition.y);
 
 		Vector3 curPosition = Camera.main.ScreenToWorldPoint(curScreenPoint) + offset;
 		transform.position = curPosition;

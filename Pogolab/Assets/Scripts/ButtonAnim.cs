@@ -21,10 +21,10 @@ public class ButtonAnim : MonoBehaviour {
 				if(hit.transform.gameObject.name == "button")
 				{
 					
-					if(GameManager.getImageButton == "idle"){
-
-						GameManager.getImageButton = "takeSnap";
-					}
+//					if(GameManager.getImageButton == "idle"){
+//
+//						GameManager.getImageButton = "takeSnap";
+//					}
 
 					anim.Play(0);
 				}
